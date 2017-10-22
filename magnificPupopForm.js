@@ -12,12 +12,7 @@ $(document).ready(function () {
 	});
 
 	// open magnific  first window
-	// $('.first-popup-link').magnificPopup({
-	// 	type: 'inline',
-	// 	focus: false
-	// });
 
-	// Inline popups
 	$('#linkFormPupo-inline-popups').magnificPopup({
 		delegate: 'a',
 		removalDelay: 500, //delay removal by X to allow out-animation
@@ -66,10 +61,6 @@ $(document).ready(function () {
 		}
 	});
 
-	// on the event blur the data is entered in the hidden fields to delete !!!
-	// $('#pupopName').blur(function () {
-	// 	console.log(landscape.val(), squaredArea.val())
-	// })
 
 	// end
 	// ==========================================
@@ -87,7 +78,7 @@ $(document).ready(function () {
 	$("#pupopFormThirdWindow").submit(function () { //Change
 		let first = $('#pupopFormFirstWindow');
 		let second = $('#pupopFormSecondWindow');
-		var third = $(this);
+		let third = $(this);
 
 		$.ajax({
 			type: "POST",
@@ -98,8 +89,10 @@ $(document).ready(function () {
 			setTimeout(function () {
 				$.magnificPopup.close();
 				first.trigger("reset");
+				second.trigger("reset");
 				third.trigger("reset");
-				third.trigger("reset");
+				$('#pupopButtonNextSecondWindow').attr('disabled', true);
+				$('#pupopButtonNextThirdWindow').attr('disabled', true);
 			}, 500);
 		});
 		return false;
