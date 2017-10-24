@@ -5,7 +5,7 @@ $(document).ready(function () {
 	$('.linkFormPupop_close').click(function () {
 		let close = $('.linkFormPupop');
 		if (close.css('right') === '0px' || close.css('right') === 0) {
-			close.css('right', '-128px');
+			close.css('right', '-140px');
 		} else {
 			close.css('right', '0');
 		}
@@ -13,16 +13,43 @@ $(document).ready(function () {
 
 	// open magnific  first window
 
-	$('#linkFormPupo-inline-popups').magnificPopup({
-		delegate: 'a',
-		removalDelay: 500, //delay removal by X to allow out-animation
-		callbacks: {
-			beforeOpen: function () {
-				this.st.mainClass = this.st.el.attr('data-effect');
+	// $('#linkFormPupop-inline-popups').magnificPopup({
+	// 	delegate: 'a',
+	// 	removalDelay: 500,
+	// 	callbacks: {
+	// 		beforeOpen: function () {
+	// 			this.st.mainClass = this.st.el.attr('data-effect');
+	// 		}
+	// 	},
+	// 	midClick: true 
+	// });
+
+	$('#linkFormPupop-inline-popups').click(function (e) {
+			let mes = e.target.text;
+			// console.log(mes);
+			setTimeout(function () {
+				// $('#form_subject').val(mes);
+				$('input[name="form_subject"]').val(mes);
+			}, 500);
+			if (mes === "скидки") {
+				$('.formPopup-text--discount').hide();
+				$('.formPopup-text--online').show();
+			} else {
+				$('.formPopup-text--online').hide();
+				$('.formPopup-text--discount').show();
 			}
-		},
-		midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
-	});
+		})
+		.magnificPopup({
+			delegate: 'a',
+			removalDelay: 500,
+			callbacks: {
+				beforeOpen: function () {
+					this.st.mainClass = this.st.el.attr('data-effect');
+				}
+			},
+			midClick: true
+		});
+
 
 
 	// validation checkbox and getting data answers
@@ -61,6 +88,9 @@ $(document).ready(function () {
 		}
 	});
 
+	// open magnific third window
+	//when clicking, there is a change of headers formPopup-text 
+
 
 	// end
 	// ==========================================
@@ -68,13 +98,13 @@ $(document).ready(function () {
 
 	// input mask
 	// ==========================================
-	$('#pupopPhone').inputmask({
+	$('#pupopPhone, #pupopPhoneSecond').inputmask({
 		"mask": "(999) 999-9999"
 	});
 
 	// END input mask ===========================
 
-	//E-mail Ajax Send
+	//E-mail Ajax Send 
 	$("#pupopFormThirdWindow").submit(function () { //Change
 		let first = $('#pupopFormFirstWindow');
 		let second = $('#pupopFormSecondWindow');
@@ -93,6 +123,24 @@ $(document).ready(function () {
 				third.trigger("reset");
 				$('#pupopButtonNextSecondWindow').attr('disabled', true);
 				$('#pupopButtonNextThirdWindow').attr('disabled', true);
+			}, 500);
+		});
+		return false;
+	});
+
+
+	// send four and fifth forms
+	$("#pupopFormFourthWindow").submit(function () { //Change
+		let first = $(this);
+		$.ajax({
+			type: "POST",
+			url: "mail.php", //Change
+			data: first.serialize()
+		}).done(function () {
+			alert("Спасибо Вам!");
+			setTimeout(function () {
+				$.magnificPopup.close();
+				first.trigger("reset");
 			}, 500);
 		});
 		return false;

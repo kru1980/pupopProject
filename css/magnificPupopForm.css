@@ -123,10 +123,10 @@ body {
 .linkFormPupop {
 	position: fixed;
 	right: 0px;
-	top: calc(50% - 70px);
-	max-width: 148px;
-	height: 28px;
-	height: 46px;
+	top: calc(50% - 100px);
+	max-width: 200px;
+	min-height: 70px;
+	padding: 10px 0;
 	background-color: rgb(134, 188, 48);
 	color: #fff;
 	border-radius: 10px 0 0 10px;
@@ -138,7 +138,10 @@ body {
 	transition: all 1s;
 	z-index: 100;
 	display: flex;
-	align-items: center;
+	/* align-items: center; */
+	text-align: left;
+	
+	text-transform: uppercase;
 }
 
 .linkFormPupop ul {
@@ -181,7 +184,8 @@ body {
 	text-decoration: none;
 	text-transform: uppercase;
 	outline: none;
-	padding-left: 3px;
+	/* padding-left: 12px; */
+	padding: 3px 0 3px 10px;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	transition: all 0.5s;
@@ -189,7 +193,10 @@ body {
 
 .linkFormPupop a:hover {
 	right: 0;
-	background-color: rgb(24, 179, 63);
+	/* background-color: rgb(24, 179, 63); */
+	background-color: rgb(165, 224, 69);
+	color: #fff;
+	border-radius: 4px 0 0 4px;
 }
 /* style first window */
 
@@ -200,7 +207,7 @@ body {
 	width: auto;
 	max-width: 500px;
 	height: 300px;
-	margin: 20px auto;
+	margin: -60px auto; /*Эту хуйню передалать!!!!!!!!!!!!!!!!!!!!!!!*/
 	border: 2px solid rgb(134, 188, 48);
 }
 
@@ -274,6 +281,7 @@ body {
 
 .formPopup-label {
 	cursor: pointer;
+	margin-top: -30px;
 }
 
 .formPopup-label>h4 {
@@ -385,10 +393,25 @@ body {
 	border-radius: 3px;
 }
 
+/* fourth window  */
+.white-popup--pad {
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 40px;
+}
+.formPopup-title {
+	text-align: center;
+	font-size: 22px;
+    font-family: 'Open Sans Light','Open Sans',Arial;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+/* END fourth window  */
 
 /* запрет появления формы на экранах меньше 520 */
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 500px) {
 	.linkFormPupop {
 		display: none;
 	}
