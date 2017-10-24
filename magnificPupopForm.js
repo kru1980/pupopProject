@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-	// Click on the X to hide the link in the popup
+	// Click on the close X to hide the link in the popup
 
 	$('.linkFormPupop_close').click(function () {
 		let close = $('.linkFormPupop');
@@ -11,24 +11,10 @@ $(document).ready(function () {
 		}
 	});
 
-	// open magnific  first window
-
-	// $('#linkFormPupop-inline-popups').magnificPopup({
-	// 	delegate: 'a',
-	// 	removalDelay: 500,
-	// 	callbacks: {
-	// 		beforeOpen: function () {
-	// 			this.st.mainClass = this.st.el.attr('data-effect');
-	// 		}
-	// 	},
-	// 	midClick: true 
-	// });
 
 	$('#linkFormPupop-inline-popups').click(function (e) {
 			let mes = e.target.text;
-			// console.log(mes);
 			setTimeout(function () {
-				// $('#form_subject').val(mes);
 				$('input[name="form_subject"]').val(mes);
 			}, 500);
 			if (mes === "скидки") {
@@ -42,6 +28,7 @@ $(document).ready(function () {
 		.magnificPopup({
 			delegate: 'a',
 			removalDelay: 500,
+			focus: '#pupopNameSecond',
 			callbacks: {
 				beforeOpen: function () {
 					this.st.mainClass = this.st.el.attr('data-effect');
@@ -49,8 +36,6 @@ $(document).ready(function () {
 			},
 			midClick: true
 		});
-
-
 
 	// validation checkbox and getting data answers
 	// ======================================
@@ -87,14 +72,6 @@ $(document).ready(function () {
 			type: 'inline',
 		}
 	});
-
-	// open magnific third window
-	//when clicking, there is a change of headers formPopup-text 
-
-
-	// end
-	// ==========================================
-
 
 	// input mask
 	// ==========================================
@@ -137,7 +114,7 @@ $(document).ready(function () {
 			url: "mail.php", //Change
 			data: first.serialize()
 		}).done(function () {
-			alert("Спасибо Вам!");
+			// alert("Спасибо Вам!");
 			setTimeout(function () {
 				$.magnificPopup.close();
 				first.trigger("reset");

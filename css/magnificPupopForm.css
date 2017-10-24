@@ -409,9 +409,9 @@ body {
 
 /* END fourth window  */
 
-/* запрет появления формы на экранах меньше 520 */
+/* запрет появления формы на экранах меньше 550 */
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
 	.linkFormPupop {
 		display: none;
 	}
