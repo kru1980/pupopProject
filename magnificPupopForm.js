@@ -118,7 +118,7 @@ $(document).ready(function () {
 			setTimeout(function () {
 				$.magnificPopup.close();
 				first.trigger("reset");
-			}, 500);
+			}, 200);
 		});
 		return false;
 	});
