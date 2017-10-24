@@ -1,55 +1,3 @@
-/* *::-webkit-input-placeholder {
-	color: #666;
-	opacity: 1;
-}
-
-*:-moz-placeholder {
-	color: #666;
-	opacity: 1;
-}
-
-*::-moz-placeholder {
-	color: #666;
-	opacity: 1;
-}
-
-*:-ms-input-placeholder {
-	color: #666;
-	opacity: 1;
-}
-
-body input:focus:required:invalid,
-body textarea:focus:required:invalid {}
-
-body input:required:valid,
-body textarea:required:valid {}
-
-html.js .loader {
-	background: none repeat scroll 0 0 #ffffff;
-	bottom: 0;
-	height: 100%;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	width: 100%;
-	z-index: 9999;
-}
-
-html.js .loader_inner {
-	background-image: url("../img/preloader.gif");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-color: #fff;
-	height: 60px;
-	width: 60px;
-	margin-top: -30px;
-	margin-left: -30px;
-	left: 50%;
-	top: 50%;
-	position: absolute;
-} */
 
 body {
 	font-family: sans-serif;
@@ -66,9 +14,6 @@ body {
 	display: none;
 }
 
-.border {
-	border: 1px solid red;
-}
 
 /* popup */
 
@@ -115,10 +60,6 @@ body {
 	opacity: 0;
   }
 
-  
-
-  
-
 /* ================================================ */
 .linkFormPupop {
 	position: fixed;
@@ -138,9 +79,7 @@ body {
 	transition: all 1s;
 	z-index: 100;
 	display: flex;
-	/* align-items: center; */
 	text-align: left;
-	
 	text-transform: uppercase;
 }
 
@@ -165,7 +104,6 @@ body {
 }
 
 .linkFormPupop ul>div.linkFormPupop_close:hover {
-	/* color: red; */
 	transform: scale(2, 2)
 }
 
@@ -184,7 +122,6 @@ body {
 	text-decoration: none;
 	text-transform: uppercase;
 	outline: none;
-	/* padding-left: 12px; */
 	padding: 3px 0 3px 10px;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
@@ -193,13 +130,11 @@ body {
 
 .linkFormPupop a:hover {
 	right: 0;
-	/* background-color: rgb(24, 179, 63); */
 	background-color: rgb(165, 224, 69);
 	color: #fff;
 	border-radius: 4px 0 0 4px;
 }
 /* style first window */
-
 .white-popup {
 	position: relative;
 	background: #FFF;
@@ -207,7 +142,7 @@ body {
 	width: auto;
 	max-width: 500px;
 	height: 300px;
-	margin: -60px auto; /*Эту хуйню передалать!!!!!!!!!!!!!!!!!!!!!!!*/
+	margin: -60px auto; /*Эту хуйню передалать!!!!!!!!!!!!!!!!!!!!!!! Стас ты ведь это не увидешь меня бесило, что окно низковато я его вверх приподнял*/
 	border: 2px solid rgb(134, 188, 48);
 }
 
