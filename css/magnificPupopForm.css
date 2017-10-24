@@ -86,11 +86,11 @@ body {
 ====== Zoom effect ======
 
 */
-.mfp-zoom-in {
+/* .mfp-zoom-in { */
 	/* start state */
 	/* animate in */
 	/* animate out */
-  }
+  /* } */
   .mfp-zoom-in .mfp-with-anim {
 	opacity: 0;
 	transition: all 0.2s ease-in-out;
