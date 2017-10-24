@@ -1,4 +1,4 @@
-*::-webkit-input-placeholder {
+/* *::-webkit-input-placeholder {
 	color: #666;
 	opacity: 1;
 }
@@ -49,7 +49,7 @@ html.js .loader_inner {
 	left: 50%;
 	top: 50%;
 	position: absolute;
-}
+} */
 
 body {
 	font-family: sans-serif;
