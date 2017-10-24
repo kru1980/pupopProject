@@ -100,7 +100,7 @@ $(document).ready(function () {
 				third.trigger("reset");
 				$('#pupopButtonNextSecondWindow').attr('disabled', true);
 				$('#pupopButtonNextThirdWindow').attr('disabled', true);
-			}, 500);
+			}, 200);
 		});
 		return false;
 	});
